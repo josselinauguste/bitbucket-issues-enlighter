@@ -1,0 +1,9 @@
+.enlighted-blocker {
+    background-color: #fbe2dd !important;
+    border-top: 2px solid rgba(227, 60, 30, 0.15) !important;
+}
+
+.enlighted-critical {
+    background-color: #feeddf !important;
+    border-top: 2px solid rgba(246, 132, 40, 0.15) !important;
+}
