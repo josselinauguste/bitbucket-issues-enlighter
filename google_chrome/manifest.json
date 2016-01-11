@@ -1,7 +1,7 @@
 {
   "name": "Bitbucket issues enlighter",
   "version": "1.0.0",
-  "description": "Improve bitbucket issues UI",
+  "description": "Make bitbucket's issues page a little more easy to read",
   "manifest_version": 2,
   "content_scripts": [
       {
