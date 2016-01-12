@@ -1,4 +1,11 @@
 
+function removeElementsByClass(className) {
+    var elements = document.getElementsByClassName(className);
+    while(elements.length > 0) {
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
 function enlightPriority(priority) {
     var enlightedIssueClassName = "enlighted-" + priority
     var issues = document.querySelectorAll(".icon-" + priority)
@@ -10,3 +17,4 @@ function enlightPriority(priority) {
 
 enlightPriority("blocker")
 enlightPriority("critical")
+removeElementsByClass("votes")
