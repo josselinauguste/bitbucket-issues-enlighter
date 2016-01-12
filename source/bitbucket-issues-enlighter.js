@@ -15,6 +15,20 @@ function enlightPriority(priority) {
     }
 }
 
+function updateHeader(headerName, label) {
+    var element = document.querySelector(".user a")
+    element.innerHTML = "A"
+}
+
+function iconifyColumn(columnName) {
+    var icons = document.querySelectorAll(".iterable-item ." + columnName)
+    for(var i = 0; i < icons.length; i++) {
+        icons[i].className = "icon-col"
+    }
+}
+
 enlightPriority("blocker")
 enlightPriority("critical")
 removeElementsByClass("votes")
+updateHeader("user", "A")
+iconifyColumn("user")
