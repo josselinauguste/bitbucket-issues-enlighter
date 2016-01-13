@@ -6,21 +6,28 @@ function removeElementsByClass(className) {
     }
 }
 
+function removeColumn(columnName) {
+    removeElementsByClass(columnName)
+}
+
 function enlightPriority(priority) {
     var enlightedIssueClassName = "enlighted-" + priority
     var issues = document.querySelectorAll(".icon-" + priority)
     for(var i = 0; i < issues.length; i++) {
         var parent = issues[i].closest("tr")
-        parent.className += " " + enlightedIssueClassName
+        if (parent) {
+            parent.className += " " + enlightedIssueClassName
+        }
     }
 }
 
-function updateHeader(headerName, label) {
-    var element = document.querySelector(".user a")
-    element.innerHTML = "A"
+function updateColumnName(columnName, columnLabel) {
+    var element = document.querySelector("." + columnName + " a")
+    element.innerHTML = columnLabel
 }
 
-function iconifyColumn(columnName) {
+function iconifyColumn(columnName, newColumnLabel) {
+    updateColumnName(columnName, newColumnLabel)
     var icons = document.querySelectorAll(".iterable-item ." + columnName)
     for(var i = 0; i < icons.length; i++) {
         icons[i].className = "icon-col"
@@ -29,6 +36,5 @@ function iconifyColumn(columnName) {
 
 enlightPriority("blocker")
 enlightPriority("critical")
-removeElementsByClass("votes")
-updateHeader("user", "A")
-iconifyColumn("user")
+removeColumn("votes")
+iconifyColumn("user", "A")
